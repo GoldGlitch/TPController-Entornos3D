@@ -24,7 +24,7 @@ public class _characterController : MonoBehaviour
   
     void CharacterMovement()
     {
-        characterMovement.moveCharacter(input.Horizontal, input.Vertical, cam, input.jump, input.dash);
+        characterMovement.moveCharacter(input.Horizontal, input.Vertical, cam, input.jump, input.dash, input.interact);
 
     }
 

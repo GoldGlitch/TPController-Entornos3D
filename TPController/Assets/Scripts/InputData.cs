@@ -17,6 +17,7 @@ public struct InputData
     //mov extras
     public bool dash;
     public bool jump;
+    public bool interact;
 
     public void getInput()
     {
@@ -31,5 +32,6 @@ public struct InputData
         //Extra movemnts
         dash = Input.GetButton("Dash");
         jump = Input.GetButtonDown("Jump");
+        interact = Input.GetButton("Interact");
     }
 }

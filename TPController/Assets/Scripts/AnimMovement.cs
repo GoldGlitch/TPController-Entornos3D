@@ -21,8 +21,9 @@ public class AnimMovement : MonoBehaviour
     public string mirrorIdleParam = "mirrorIdle";
     public string turn180Param = "turn180";
     public string jumpParam = "Jumping";
-    public string groundParam = "isGrounded";
-    public string stairsParam = "upStairs";
+    private string groundParam = "isGrounded";
+    private string stairsParam = "upStairs";
+    private string danceParam = "Dance";
 
     [Header("Animation Smoothing")]
     [Range(0, 1f)]
@@ -74,7 +75,7 @@ public class AnimMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void moveCharacter(float hInput, float vInput, Camera cam, bool jump, bool dash)
+    public void moveCharacter(float hInput, float vInput, Camera cam, bool jump, bool dash, bool interact)
     {
 
         if (grounded == true)
@@ -147,6 +148,11 @@ public class AnimMovement : MonoBehaviour
             {
                 //jumpVector.y = jumpSpeed;
                 animator.SetTrigger(jumpParam);
+            }
+
+            if (interact)
+            {
+                animator.SetTrigger(danceParam);
             }
         }
 
